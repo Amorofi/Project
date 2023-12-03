@@ -85,7 +85,7 @@
     </div>
 </nav>
 
-<!-- Page Content -->
+
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-6">
