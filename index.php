@@ -1,5 +1,6 @@
 <?php
 include "view-header.php";
+include "offer.php";
 ?>
 
 
