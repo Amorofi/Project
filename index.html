@@ -17,7 +17,12 @@
                 <li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Discover More</a></li>
             </ul>
         </div>
-        
+
+        <section id="featured-image">
+            <!-- Display a dynamic image using the Unsplash API -->
+            <img id="dynamicImage" src="" alt="Dynamic Image" />
+        </section>
+
         <!-- ... Rest of your HTML code ... -->
 
     </div>
@@ -28,7 +33,24 @@
     <script src="assets/js/browser.min.js"></script>
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
+
+    <!-- Integrate a third-party JavaScript library (e.g., Axios for making HTTP requests) -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <!-- Your custom scripts -->
     <script src="assets/js/main.js"></script>
+
+    <script>
+        // Use Axios to fetch a random image from Unsplash
+        axios.get('https://source.unsplash.com/random')
+            .then(function (response) {
+                // Set the source of the image to the dynamically fetched URL
+                document.getElementById('dynamicImage').src = response.request.responseURL;
+            })
+            .catch(function (error) {
+                console.error('Error fetching image:', error);
+            });
+    </script>
 
 </body>
 </html>
