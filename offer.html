@@ -56,109 +56,54 @@
             margin-top: 30px;
             text-align: center;
         }
-
-      
-        .amenities-section li {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-
-        .amenities-section li.aos-animate {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
-
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
 
 <header>
-    <h1></h1>
+    <h1>  ************************************************ </h1>
 </header>
 
 <main>
     <section class="featured-properties">
         <h2>Featured Properties</h2>
-
+       
         <div class="property-card">
             <img src="https://parrotrealty.com/files/property_image/3093/470_3093.jpeg" alt="Property 1">
             <h3>Beautiful Family Home</h3>
             <p>3 Bed | 2 Bath | 2,000 sqft</p>
             <a href="#" onclick="showDetails('property1-details')">View Details</a>
             <div id="property1-details" class="property-details">
-                <img src="https://fpg.roomsketcher.com/image/topic/3/image/3-Bedroom-3D-House-Plan.jpg" alt="Property 1">
-              
-                <div id="threejs-container"></div>
+               <img src="https://fpg.roomsketcher.com/image/topic/3/image/3-Bedroom-3D-House-Plan.jpg" alt="Property 1">
             </div>
         </div>
+        
     </section>
 
+   
     <section class="amenities-section">
         <h2 class="mb-4">Amenities</h2>
         <p class="lead">Explore the amazing amenities we offer to make your dream home even more special:</p>
         <ul>
-            <li data-aos="fade-up" class="aos-animate">Spacious living areas</li>
-            <li data-aos="fade-up" data-aos-delay="100" class="aos-animate">Modern kitchen designs</li>
-            <li data-aos="fade-up" data-aos-delay="200" class="aos-animate">Luxurious bathrooms</li>
-            <li data-aos="fade-up" data-aos-delay="300" class="aos-animate">Beautiful outdoor spaces</li>
+            <li>Spacious living areas</li>
+            <li>Modern kitchen designs</li>
+            <li>Luxurious bathrooms</li>
+            <li>Beautiful outdoor spaces</li>
         </ul>
     </section>
 </main>
 
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-
 <script>
-    
-
-    AOS.init({
-        duration: 1000, 
-    });
-
     function showDetails(detailsId) {
         var detailsElement = document.getElementById(detailsId);
         if (detailsElement.style.display === 'none') {
             detailsElement.style.display = 'block';
-          
-            initThreeJs();
         } else {
             detailsElement.style.display = 'none';
         }
     }
-
-    function initThreeJs() {
-        
-        var scene = new THREE.Scene();
-        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-
-        var renderer = new THREE.WebGLRenderer();
-        renderer.setSize(300, 300); 
-        document.getElementById('threejs-container').appendChild(renderer.domElement);
-
-        var geometry = new THREE.BoxGeometry();
-        var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        var cube = new THREE.Mesh(geometry, material);
-
-        scene.add(cube);
-
-        camera.position.z = 5;
-
-        var animate = function () {
-            requestAnimationFrame(animate);
-
-            
-
-            renderer.render(scene, camera);
-        };
-
-        animate();
-    }
 </script>
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </body>
 </html>
