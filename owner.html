@@ -4,12 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-
-    <!-- Add these lines in the <head> section of your HTML -->
-<script type="module">
-  import * as THREE from 'https://cdn.skypack.dev/three@110.1.1/build/three.module.js';
-</script>
-
+    <script src="https://cdn.skypack.dev/three@110.1.1/build/three.module.js"></script>
 
     <title>Appointment Booking</title>
     <style>
@@ -85,11 +80,10 @@
 
     <script>
         $(document).ready(function () {
-            // Handle form submission
+
             $("#appointmentForm").submit(function (event) {
                 event.preventDefault();
 
-                // Collect form data
                 var formData = {
                     name: $("#name").val(),
                     email: $("#email").val(),
@@ -97,55 +91,39 @@
                     time: $("#time").val()
                 };
 
-                // You can perform additional validation here if needed
 
-                // Send data to the server or perform other actions
-                // For now, let's just log the data to the console
                 console.log("Form Data:", formData);
 
-                // You can add AJAX code here to send data to the server
 
-                // Reset the form after submission
                 $("#appointmentForm")[0].reset();
             });
         });
 
-        <!-- ... Your existing HTML code ... -->
+     
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
-<script type="module">
-  import * as THREE from 'https://cdn.skypack.dev/three@110.1.1/build/three.module.js';
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
 
-  // Your existing jQuery code
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
 
-  // Add Three.js code
-  const scene = new THREE.Scene();
-  const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
 
-  const renderer = new THREE.WebGLRenderer();
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  document.body.appendChild(renderer.domElement);
+        const animate = function () {
+            requestAnimationFrame(animate);
 
-  const geometry = new THREE.BoxGeometry();
-  const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-  const cube = new THREE.Mesh(geometry, material);
-  scene.add(cube);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
 
-  camera.position.z = 5;
+            renderer.render(scene, camera);
+        };
 
-  const animate = function () {
-    requestAnimationFrame(animate);
-
-    cube.rotation.x += 0.01;
-    cube.rotation.y += 0.01;
-
-    renderer.render(scene, camera);
-  };
-
-  animate();
-</script>
-
-<!-- ... Rest of your HTML code ... -->
-
+        animate();
     </script>
 </body>
 </html>
