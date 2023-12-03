@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
     <title>Appointment Booking</title>
     <style>
         body {
@@ -72,4 +74,35 @@
             <input type="time" id="time" name="time" required>
 
             <button type="submit">Book Appointment</button>
-        </
+        </form>
+    </main>
+
+    <script>
+        $(document).ready(function () {
+            // Handle form submission
+            $("#appointmentForm").submit(function (event) {
+                event.preventDefault();
+
+                // Collect form data
+                var formData = {
+                    name: $("#name").val(),
+                    email: $("#email").val(),
+                    date: $("#date").val(),
+                    time: $("#time").val()
+                };
+
+                // You can perform additional validation here if needed
+
+                // Send data to the server or perform other actions
+                // For now, let's just log the data to the console
+                console.log("Form Data:", formData);
+
+                // You can add AJAX code here to send data to the server
+
+                // Reset the form after submission
+                $("#appointmentForm")[0].reset();
+            });
+        });
+    </script>
+</body>
+</html>
