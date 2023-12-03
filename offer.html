@@ -70,12 +70,13 @@
         }
     </style>
 
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 </head>
 <body>
 
 <header>
-    <h1>Your Real Estate Website</h1>
+    <h1></h1>
 </header>
 
 <main>
@@ -89,6 +90,8 @@
             <a href="#" onclick="showDetails('property1-details')">View Details</a>
             <div id="property1-details" class="property-details">
                 <img src="https://fpg.roomsketcher.com/image/topic/3/image/3-Bedroom-3D-House-Plan.jpg" alt="Property 1">
+              
+                <div id="threejs-container"></div>
             </div>
         </div>
     </section>
@@ -105,7 +108,11 @@
     </section>
 </main>
 
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
 <script>
+    
 
     AOS.init({
         duration: 1000, 
@@ -115,9 +122,39 @@
         var detailsElement = document.getElementById(detailsId);
         if (detailsElement.style.display === 'none') {
             detailsElement.style.display = 'block';
+          
+            initThreeJs();
         } else {
             detailsElement.style.display = 'none';
         }
+    }
+
+    function initThreeJs() {
+        
+        var scene = new THREE.Scene();
+        var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+        var renderer = new THREE.WebGLRenderer();
+        renderer.setSize(300, 300); 
+        document.getElementById('threejs-container').appendChild(renderer.domElement);
+
+        var geometry = new THREE.BoxGeometry();
+        var material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        var cube = new THREE.Mesh(geometry, material);
+
+        scene.add(cube);
+
+        camera.position.z = 5;
+
+        var animate = function () {
+            requestAnimationFrame(animate);
+
+            
+
+            renderer.render(scene, camera);
+        };
+
+        animate();
     }
 </script>
 
