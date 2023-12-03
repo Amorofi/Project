@@ -4,19 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Page Title</title>
-    <!-- Include your CSS and other meta tags here -->
+    <style>
+        .property-details {
+            display: none;
+        }
+    </style>
 </head>
 <body>
 
 <section class="featured-properties">
     <h2>Featured Properties</h2>
-    <!-- Display featured properties with images, descriptions, and links -->
-    <!-- Example: -->
+    <!-- Example Property Card -->
     <div class="property-card">
-        <img src="https://parrotrealty.com/files/property_image/3093/470_3093.jpeg" alt="Property 1">
+        <img src="property1.jpg" alt="Property 1">
         <h3>Beautiful Family Home</h3>
         <p>3 Bed | 2 Bath | 2,000 sqft</p>
-        <a href="#">View Details</a>
+        <a href="#" onclick="showDetails('property1-details')">View Details</a>
+        <div id="property1-details" class="property-details">
+            <!-- Additional details go here -->
+            <p>This is a beautiful family home with amazing features.</p>
+        </div>
     </div>
     <!-- Repeat similar structure for other featured properties -->
 </section>
@@ -34,5 +41,16 @@
 </section>
 
 <!-- Include your JavaScript and other scripts here -->
+<script>
+    function showDetails(detailsId) {
+        var detailsElement = document.getElementById(detailsId);
+        if (detailsElement.style.display === 'none') {
+            detailsElement.style.display = 'block';
+        } else {
+            detailsElement.style.display = 'none';
+        }
+    }
+</script>
+
 </body>
 </html>
