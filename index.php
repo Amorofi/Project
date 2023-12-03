@@ -24,11 +24,7 @@
 						</ul>
 					</div>
 
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Massively</a>
-					</header>
-
+				
 				<!-- Nav -->
 					<nav id="nav">
 						<ul class="links">
