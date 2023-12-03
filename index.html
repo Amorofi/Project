@@ -13,6 +13,40 @@
 
     <!-- Your custom CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Custom Styles -->
+    <style>
+        body {
+            background-color: #f8f9fa; /* Light gray background color */
+        }
+
+        .navbar {
+            border-bottom: 2px solid #343a40; /* Dark border for navbar */
+        }
+
+        .hero-section {
+            padding: 40px;
+            background-color: #343a40;
+            color: #ffffff;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .about-section, .contact-section {
+            background-color: #ffffff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .real-estate-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
 
@@ -42,41 +76,30 @@
     <div class="row">
         <div class="col-md-6">
             <section class="hero-section text-center">
-                <h1>Welcome to Your Dream Home</h1>
-                <p>Discover the perfect place that feels like home. Explore our listings and find the property of your dreams.</p>
+                <h1 class="display-4">Welcome to Your Dream Home</h1>
+                <p class="lead">Discover the perfect place that feels like home. Explore our listings and find the property of your dreams.</p>
                 <!-- Add a search bar or call-to-action buttons for property search -->
             </section>
 
-            <!-- Featured Properties Section -->
-            <section class="featured-properties">
-                <h2>Featured Properties</h2>
-                <!-- Display featured properties with images, descriptions, and links -->
-                <!-- Example: -->
-                <div class="property-card">
-                    <img src="property1.jpg" alt="Property 1">
-                    <h3>Beautiful Family Home</h3>
-                    <p>3 Bed | 2 Bath | 2,000 sqft</p>
-                    <a href="#">View Details</a>
-                </div>
-                <!-- Repeat similar structure for other featured properties -->
-            </section>
         </div>
 
         <div class="col-md-6">
             <!-- Real Estate Image -->
-            <img src="real_estate_image.jpg" alt="Real Estate Image" class="img-fluid mb-3">
+            <div class="real-estate-image">
+                <img src="https://assets.entrepreneur.com/content/3x2/2000/1691095535-entrepreneur-real-estate-wealth-0823-g912235266.jpg" alt="Real Estate Image" class="img-fluid">
+            </div>
 
             <!-- About Us Section -->
             <section class="about-section">
-                <h2>About Us</h2>
-                <p>At Your Real Estate, we are committed to helping you find the perfect home. Our experienced team is dedicated to making your real estate journey a seamless and enjoyable experience.</p>
+                <h2 class="mb-4">About Us</h2>
+                <p class="lead">At Your Real Estate, we are committed to helping you find the perfect home. Our experienced team is dedicated to making your real estate journey a seamless and enjoyable experience.</p>
                 <!-- Add more information about your team, values, or any unique selling points -->
             </section>
 
             <!-- Contact Section -->
             <section class="contact-section">
-                <h2>Contact Us</h2>
-                <p>Have questions or ready to start your home search? Contact us today!</p>
+                <h2 class="mb-4">Contact Us</h2>
+                <p class="lead">Have questions or ready to start your home search? Contact us today!</p>
                 <!-- Add a contact form, phone number, or email address -->
             </section>
         </div>
