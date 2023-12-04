@@ -58,7 +58,6 @@
         <h1>Appointment Booking</h1>
     </header>
     <div id="container">
-         <div id="message" style="display: none;"></div>
         <form id="appointmentForm">
             <label for="name">Your Name:</label>
             <input type="text" id="name" name="name" required>
@@ -75,28 +74,6 @@
             <button type="submit">Book Appointment</button>
         </form>
     </div>
-
-    <script>
-        function submitForm(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Here you can add logic to check if the form is successfully submitted or not
-            var isSuccess = true; // For example, set to true if the form is successfully submitted
-
-            // Display the message based on success or failure
-            var messageElement = document.getElementById('message');
-            if (isSuccess) {
-                messageElement.textContent = 'Appointment booked successfully!';
-                messageElement.style.color = 'green';
-            } else {
-                messageElement.textContent = 'Failed to book appointment. Please try again.';
-                messageElement.style.color = 'red';
-            }
-
-            // Show the message element
-            messageElement.style.display = 'block';
-        }
-    </script>
 
 </body>
 </html>
