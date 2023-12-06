@@ -77,8 +77,6 @@
         </div>
         
     </section>
-
-
    
     <section class="amenities-section">
         <h2 class="mb-4">Amenities</h2>
@@ -92,8 +90,16 @@
     </section>
 </div>
 
-
-
-
+<script>
+    function showDetails(detailsId) {
+        var detailsElement = document.getElementById(detailsId);
+        if (detailsElement.style.display === 'none') {
+            detailsElement.style.display = 'block';
+        } else {
+            detailsElement.style.display = 'none';
+        }
+    }
+</script>
+    
 </body>
 </html>
