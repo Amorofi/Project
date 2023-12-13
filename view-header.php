@@ -64,7 +64,7 @@
                     <a class="nav-link" href="offer.html">Featured </a>
                 </li>
                  <li class="nav-item">
-                    <a class="nav-link" href="owner.html"> Book appointment </a>
+                    <a class="nav-link" href="owner.php"> Book appointment </a>
                 </li>
             </ul>
         </div>
