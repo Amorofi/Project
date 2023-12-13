@@ -58,9 +58,10 @@
         <h1>Appointment Booking</h1>
     </header>
     <div id="container">
-        <?php
-        include ('book-appointment.php');
-        ?>
+<?php
+include('book-appointment.php');
+?>
+
 
         <form id="appointmentForm" method="post" action="">
             <label for="name">Your Name:</label>
