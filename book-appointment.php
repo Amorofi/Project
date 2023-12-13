@@ -31,7 +31,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    $sql = "INSERT INTO Appointments (ClientName, ContactEmail, AppointmentDate) VALUES ('$name', '$email', '$date $time')";
+    $sql = "INSERT INTO Appointments ("SELECT Appointment_id, ClientName, Email FROM `appointment` " )";
     
     if ($conn->query($sql) === TRUE) {
         echo "Appointment booked successfully!";
