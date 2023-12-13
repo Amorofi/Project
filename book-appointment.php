@@ -1,4 +1,15 @@
 <?php
+function get_db_connection(){
+    // Create connection
+    $conn = new mysqli('159.89.47.44', 'amorofio_davprojectuser', '_pt?kBE.j0[i', 'amorofio_davproject');
+    
+    // Check connection
+    if ($conn->connect_error) {
+      return false;
+    }
+    return $conn;
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Retrieve form data
     $name = $_POST["name"];
@@ -11,14 +22,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = filter_var($email, FILTER_VALIDATE_EMAIL) ? $email : null;
     // Add more validation for date and time as needed
 
-   require_once("util-db.php")
-
-    // Create a connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+    // Get database connection
+    $conn = get_db_connection();
 
     // Check the connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    if ($conn === false) {
+        die("Database connection failed");
     }
 
     // Insert data into the database
@@ -30,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
- 
+    // Close the connection
     $conn->close();
 }
 ?>
